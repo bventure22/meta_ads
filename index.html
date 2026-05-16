@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuelekezwa WhatsApp...</title>
+
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    
+    // Replace 1234567890 with your actual Meta Pixel ID
+    fbq('init', '1234567890'); 
+    fbq('track', 'PageView');
+    
+    // Optional: Tracks this specific action as a Lead/Contact in your reports
+    fbq('track', 'Contact'); 
+    </script>
+    <script>
+        window.onload = function() {
+            // 300ms delay gives the Meta Pixel just enough time to fire cleanly
+            setTimeout(function() {
+                window.location.href = "https://wa.me/255653678185?text=Habari,%20ninawezaje%20kuwapata%3F";
+            }, 300);
+        };
+    </script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f7f9fa;
+            color: #333;
+            text-align: center;
+        }
+        .loader-container {
+            padding: 20px;
+        }
+        .btn-fallback {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #25D366;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="loader-container">
+        <h2>Tafadhali subiri kidogo...</h2>
+        <p>Tunakupeleka WhatsApp kuwasiliana na Kibakwe Signs.</p>
+        <a class="btn-fallback" href="https://wa.me/255653678185?text=Habari,%20ninawezaje%20kuwapata%3F">
+            Bofya hapa kama hujaenda mbele
+        </a>
+    </div>
+
+</body>
+</html>
