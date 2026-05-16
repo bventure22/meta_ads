@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kuelekezwa WhatsApp...</title>
-
+    <title>Kibakwe Company Limited</title>
+    
+    <!-- 1. META PIXEL BASE CODE -->
     <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -14,59 +15,234 @@
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
-    
-    // Replace 1234567890 with your actual Meta Pixel ID
-    fbq('init', '1234567890'); 
+    fbq('init', 'YOUR_META_PIXEL_ID_HERE'); // <-- WEKA PIXEL ID YAKO HAPA
     fbq('track', 'PageView');
-    
-    // Optional: Tracks this specific action as a Lead/Contact in your reports
-    fbq('track', 'Contact'); 
     </script>
-    <script>
-        window.onload = function() {
-            // 300ms delay gives the Meta Pixel just enough time to fire cleanly
-            setTimeout(function() {
-                window.location.href = "https://wa.me/255653678185?text=Habari,%20ninawezaje%20kuwapata%3F";
-            }, 300);
-        };
-    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=YOUR_META_PIXEL_ID_HERE&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- END META PIXEL CODE -->
 
     <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
         body {
-            font-family: Arial, sans-serif;
+            background: #f4f7f6;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f7f9fa;
+            min-height: 100vh;
             color: #333;
-            text-align: center;
-        }
-        .loader-container {
             padding: 20px;
         }
-        .btn-fallback {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 10px 20px;
+
+        .card {
+            background: #ffffff;
+            max-width: 450px;
+            width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            padding: 30px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #0b3c5d;
+            font-size: 24px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        /* 3D Flipping Image Effect Containers */
+        .image-container {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 25px auto;
+            perspective: 1000px;
+        }
+
+        .flip-card {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .flip-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            backface-visibility: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        /* Set the back image rotated by 180 deg */
+        .flip-card .back-img {
+            transform: rotateY(180deg);
+        }
+
+        /* Services List */
+        .details-box {
+            background: #f9fbfb;
+            border-left: 4px solid #328cc1;
+            padding: 15px;
+            margin-bottom: 20px;
+            text-align: left;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .details-box p {
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+
+        .details-box p::before {
+            content: "✅";
+            margin-right: 10px;
+            font-size: 14px;
+        }
+
+        .welcome-text {
+            font-size: 18px;
+            font-weight: 600;
+            color: #328cc1;
+            margin-bottom: 25px;
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-btn {
             background-color: #25D366;
             color: white;
-            text-decoration: none;
-            border-radius: 5px;
+            border: none;
+            padding: 15px 30px;
+            font-size: 16px;
             font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .whatsapp-btn:hover {
+            background-color: #20ba5a;
+            transform: translateY(-2px);
+        }
+
+        .whatsapp-btn:active {
+            transform: translateY(1px);
+        }
+
+        /* Elegant Loading Spinner */
+        .spinner {
+            width: 30px;
+            height: 30px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #25D366;
+            border-radius: 50%;
+            margin: 20px auto 0 auto;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
     </style>
 </head>
 <body>
 
-    <div class="loader-container">
-        <h2>Tafadhali subiri kidogo...</h2>
-        <p>Tunakupeleka WhatsApp kuwasiliana na Kibakwe Signs.</p>
-        <a class="btn-fallback" href="https://wa.me/255653678185?text=Habari,%20ninawezaje%20kuwapata%3F">
-            Bofya hapa kama hujaenda mbele
-        </a>
+    <div class="card">
+        <h1>Kibakwe Company Limited</h1>
+
+        <!-- Image Container with 3D structural layout -->
+        <div class="image-container">
+            <div class="flip-card" id="flipper">
+                <img src="image1.jpeg" class="front-img" id="front-view" alt="Kibakwe Work 1">
+                <img src="image2.jpeg" class="back-img" id="back-view" alt="Kibakwe Work 2">
+            </div>
+        </div>
+
+        <div class="details-box">
+            <p>Tunatengeneza Mabango ya kisasa</p>
+            <p>Tunaprint stika aina zote</p>
+            <p>Tunatengeneza Mawe ya makaburi</p>
+        </div>
+
+        <div class="welcome-text">Karibuni sana</div>
+
+        <!-- Option A: Trackable Action Button -->
+        <button class="whatsapp-btn" id="cta-button">
+            <!-- Simple SVG inline icon for WhatsApp look -->
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397 0 11.948 0c3.179.001 6.165 1.24 8.413 3.488 2.248 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.907-11.893 11.907-2.006-.001-3.973-.51-5.716-1.486L0 24zm6.59-4.846c1.6.95 3.498 1.456 5.353 1.457 5.428 0 9.845-4.383 9.848-9.776.002-2.613-1.015-5.07-2.864-6.92C17.076 2.064 14.617 1.046 12 1.045 6.571 1.045 2.156 5.429 2.153 10.822c-.001 1.94.51 3.829 1.48 5.513l-.999 3.648 3.743-.981zm11.387-5.464c-.301-.15-1.78-.879-2.056-.979-.275-.1-.475-.15-.675.15-.199.299-.775.979-.95 1.178-.175.199-.35.224-.651.075-3.033-1.514-4.754-2.422-6.65-5.667-.249-.427.249-.396.713-1.32.076-.15.038-.282-.019-.397-.056-.113-.475-1.144-.651-1.564-.172-.414-.347-.359-.475-.365-.122-.006-.263-.007-.403-.007s-.369.052-.563.264c-.194.213-.739.721-.739 1.761 0 1.04.755 2.04.861 2.181.106.141 1.485 2.268 3.598 3.178 1.135.489 2.02.783 2.709.999.57.181 1.089.155 1.5.094.458-.067 1.781-.728 2.031-1.431.25-.703.25-1.306.175-1.431-.075-.124-.275-.199-.575-.349z"/></svg>
+            Tuma Ujumbe WhatsApp
+        </button>
+
+        <div class="spinner"></div>
     </div>
 
+    <script>
+        // --- 1. SLIDESHOW ROTATION WITH FLIPPING EFFECT ---
+        const images = ["image1.jpeg", "image2.jpeg", "image3.jpeg", "image4.jpeg"];
+        let currentIndex = 0;
+        
+        const flipper = document.getElementById('flipper');
+        const frontView = document.getElementById('front-view');
+        const backView = document.getElementById('back-view');
+        
+        let isFlipped = false;
+
+        setInterval(() => {
+            // Get next index sequence
+            currentIndex = (currentIndex + 1) % images.length;
+            
+            if (!isFlipped) {
+                // Update hidden back image before user sees it
+                backView.src = images[currentIndex];
+                // Rotate elements to show the back view
+                flipper.style.transform = "rotateY(180deg)";
+                isFlipped = true;
+            } else {
+                // Update hidden front image before user sees it
+                frontView.src = images[currentIndex];
+                // Rotate back to show original orientation 
+                flipper.style.transform = "rotateY(0deg)";
+                isFlipped = false;
+            }
+        }, 3000); // Transitions occur every 3 seconds
+
+        // --- 2. THE TRACKABLE CONVERSION LINK EXECUTION ---
+        document.getElementById('cta-button').addEventListener('click', function() {
+            // Send standard contact conversion signal to Meta Event stream
+            fbq('track', 'Contact'); 
+
+            // Clean, encoded target strings matching your text specs
+            const phone = "255653678185";
+            const message = "Habari, naweza kupata habari zaidi kuhusu huduma zenu? Mnapatikana wapi?";
+            const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+
+            // Force a slight delay buffer (300ms) to guarantee packet transfer to Meta before navigating away
+            setTimeout(function() {
+                window.location.href = whatsappUrl;
+            }, 300);
+        });
+    </script>
 </body>
 </html>
