@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kibakwe Company Limited</title>
     
+    <!-- Google Fonts for Classic Look -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
     <!-- 1. META PIXEL BASE CODE -->
     <script>
     !function(f,b,e,v,n,t,s)
@@ -28,41 +31,55 @@
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            background: #f4f7f6;
+            /* Classic cool dark gray/blue background */
+            background: linear-gradient(135deg, #e0e5ec 0%, #f4f7f6 100%);
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            font-family: 'Lato', sans-serif;
             color: #333;
             padding: 20px;
         }
 
         .card {
             background: #ffffff;
-            max-width: 450px;
+            max-width: 420px;
             width: 100%;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            padding: 40px 30px;
             text-align: center;
+            position: relative;
+            border-top: 5px solid #1a2639;
         }
 
         h1 {
-            color: #0b3c5d;
-            font-size: 24px;
-            margin-bottom: 20px;
+            font-family: 'Playfair Display', serif;
+            color: #1a2639;
+            font-size: 26px;
+            margin-bottom: 10px;
             font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        /* Gold Divider */
+        .divider {
+            width: 50px;
+            height: 3px;
+            background-color: #c5a059;
+            margin: 0 auto 25px auto;
+            border-radius: 2px;
         }
 
         /* 3D Flipping Image Effect Containers */
         .image-container {
-            width: 200px;
-            height: 200px;
-            margin: 0 auto 25px auto;
+            width: 220px;
+            height: 220px;
+            margin: 0 auto 30px auto;
             perspective: 1000px;
         }
 
@@ -71,106 +88,129 @@
             height: 100%;
             position: relative;
             transform-style: preserve-3d;
-            transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: transform 0.9s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
         .flip-card img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 12px;
+            border-radius: 8px;
             position: absolute;
             top: 0;
             left: 0;
             backface-visibility: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            border: 4px solid #fff;
         }
 
-        /* Set the back image rotated by 180 deg */
         .flip-card .back-img {
             transform: rotateY(180deg);
         }
 
-        /* Services List */
-        .details-box {
-            background: #f9fbfb;
-            border-left: 4px solid #328cc1;
-            padding: 15px;
-            margin-bottom: 20px;
+        /* Elegant Services List */
+        .classic-list {
+            list-style: none;
             text-align: left;
-            border-radius: 0 8px 8px 0;
+            margin: 0 auto 25px auto;
+            padding: 0 10px;
         }
 
-        .details-box p {
-            font-size: 15px;
+        .classic-list li {
+            font-size: 16px;
             line-height: 1.6;
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
+            margin-bottom: 12px;
+            color: #4a4a4a;
+            position: relative;
+            padding-left: 25px;
         }
 
-        .details-box p::before {
-            content: "✅";
-            margin-right: 10px;
+        .classic-list li::before {
+            content: "♦";
+            position: absolute;
+            left: 0;
+            color: #c5a059;
             font-size: 14px;
+            top: 1px;
         }
 
         .welcome-text {
-            font-size: 18px;
-            font-weight: 600;
-            color: #328cc1;
+            font-size: 17px;
+            font-weight: 700;
+            color: #1a2639;
             margin-bottom: 25px;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
         }
 
-        /* WhatsApp Button */
-        .whatsapp-btn {
-            background-color: #25D366;
-            color: white;
+        /* Button Group */
+        .button-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        /* Action Buttons */
+        .action-btn {
             border: none;
-            padding: 15px 30px;
-            font-size: 16px;
-            font-weight: bold;
-            border-radius: 50px;
+            padding: 14px 25px;
+            font-size: 15px;
+            font-weight: 700;
+            border-radius: 6px;
             cursor: pointer;
             width: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
             gap: 10px;
-            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
-            transition: transform 0.2s, background-color 0.2s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        /* Call Button (Navy) */
+        .call-btn {
+            background-color: #1a2639;
+            color: white;
+            box-shadow: 0 4px 15px rgba(26, 38, 57, 0.2);
+        }
+
+        .call-btn:hover {
+            background-color: #2c3e50;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(26, 38, 57, 0.3);
+        }
+
+        /* WhatsApp Button (Classic Green) */
+        .whatsapp-btn {
+            background-color: #25D366;
+            color: white;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.2);
         }
 
         .whatsapp-btn:hover {
             background-color: #20ba5a;
             transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
         }
 
-        .whatsapp-btn:active {
+        .action-btn:active {
             transform: translateY(1px);
         }
 
-        /* Elegant Loading Spinner */
-        .spinner {
-            width: 30px;
-            height: 30px;
-            border: 3px solid #f3f3f3;
-            border-top: 3px solid #25D366;
-            border-radius: 50%;
-            margin: 20px auto 0 auto;
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+        .icon-svg {
+            width: 20px;
+            height: 20px;
+            fill: white;
         }
     </style>
 </head>
 <body>
 
     <div class="card">
-        <h1>Kibakwe Company Limited</h1>
+        <h1>Kibakwe Company</h1>
+        <div class="divider"></div>
 
         <!-- Image Container with 3D structural layout -->
         <div class="image-container">
@@ -180,22 +220,31 @@
             </div>
         </div>
 
-        <div class="details-box">
-            <p>Tunatengeneza Mabango ya kisasa</p>
-            <p>Tunaprint stika aina zote</p>
-            <p>Tunatengeneza Mawe ya makaburi</p>
-        </div>
+        <ul class="classic-list">
+            <li>Tunatengeneza Mabango ya kisasa</li>
+            <li>Tunaprint stika aina zote</li>
+            <li>Tunatengeneza Mawe ya makaburi</li>
+        </ul>
 
         <div class="welcome-text">Karibuni sana</div>
 
-        <!-- Option A: Trackable Action Button -->
-        <button class="whatsapp-btn" id="cta-button">
-            <!-- Simple SVG inline icon for WhatsApp look -->
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397 0 11.948 0c3.179.001 6.165 1.24 8.413 3.488 2.248 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.907-11.893 11.907-2.006-.001-3.973-.51-5.716-1.486L0 24zm6.59-4.846c1.6.95 3.498 1.456 5.353 1.457 5.428 0 9.845-4.383 9.848-9.776.002-2.613-1.015-5.07-2.864-6.92C17.076 2.064 14.617 1.046 12 1.045 6.571 1.045 2.156 5.429 2.153 10.822c-.001 1.94.51 3.829 1.48 5.513l-.999 3.648 3.743-.981zm11.387-5.464c-.301-.15-1.78-.879-2.056-.979-.275-.1-.475-.15-.675.15-.199.299-.775.979-.95 1.178-.175.199-.35.224-.651.075-3.033-1.514-4.754-2.422-6.65-5.667-.249-.427.249-.396.713-1.32.076-.15.038-.282-.019-.397-.056-.113-.475-1.144-.651-1.564-.172-.414-.347-.359-.475-.365-.122-.006-.263-.007-.403-.007s-.369.052-.563.264c-.194.213-.739.721-.739 1.761 0 1.04.755 2.04.861 2.181.106.141 1.485 2.268 3.598 3.178 1.135.489 2.02.783 2.709.999.57.181 1.089.155 1.5.094.458-.067 1.781-.728 2.031-1.431.25-.703.25-1.306.175-1.431-.075-.124-.275-.199-.575-.349z"/></svg>
-            Tuma Ujumbe WhatsApp
-        </button>
+        <div class="button-group">
+            <!-- Direct Call Button -->
+            <a href="tel:+255686500947" class="action-btn call-btn" id="call-button">
+                <svg class="icon-svg" viewBox="0 0 24 24">
+                    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                </svg>
+                Piga Simu Sasa
+            </a>
 
-        <div class="spinner"></div>
+            <!-- WhatsApp Button -->
+            <button class="action-btn whatsapp-btn" id="cta-button">
+                <svg class="icon-svg" viewBox="0 0 24 24">
+                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397 0 11.948 0c3.179.001 6.165 1.24 8.413 3.488 2.248 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.907-11.893 11.907-2.006-.001-3.973-.51-5.716-1.486L0 24zm6.59-4.846c1.6.95 3.498 1.456 5.353 1.457 5.428 0 9.845-4.383 9.848-9.776.002-2.613-1.015-5.07-2.864-6.92C17.076 2.064 14.617 1.046 12 1.045 6.571 1.045 2.156 5.429 2.153 10.822c-.001 1.94.51 3.829 1.48 5.513l-.999 3.648 3.743-.981zm11.387-5.464c-.301-.15-1.78-.879-2.056-.979-.275-.1-.475-.15-.675.15-.199.299-.775.979-.95 1.178-.175.199-.35.224-.651.075-3.033-1.514-4.754-2.422-6.65-5.667-.249-.427.249-.396.713-1.32.076-.15.038-.282-.019-.397-.056-.113-.475-1.144-.651-1.564-.172-.414-.347-.359-.475-.365-.122-.006-.263-.007-.403-.007s-.369.052-.563.264c-.194.213-.739.721-.739 1.761 0 1.04.755 2.04.861 2.181.106.141 1.485 2.268 3.598 3.178 1.135.489 2.02.783 2.709.999.57.181 1.089.155 1.5.094.458-.067 1.781-.728 2.031-1.431.25-.703.25-1.306.175-1.431-.075-.124-.275-.199-.575-.349z"/>
+                </svg>
+                Tuma WhatsApp
+            </button>
+        </div>
     </div>
 
     <script>
@@ -210,35 +259,32 @@
         let isFlipped = false;
 
         setInterval(() => {
-            // Get next index sequence
             currentIndex = (currentIndex + 1) % images.length;
             
             if (!isFlipped) {
-                // Update hidden back image before user sees it
                 backView.src = images[currentIndex];
-                // Rotate elements to show the back view
                 flipper.style.transform = "rotateY(180deg)";
                 isFlipped = true;
             } else {
-                // Update hidden front image before user sees it
                 frontView.src = images[currentIndex];
-                // Rotate back to show original orientation 
                 flipper.style.transform = "rotateY(0deg)";
                 isFlipped = false;
             }
-        }, 3000); // Transitions occur every 3 seconds
+        }, 3500); // Transitions slightly slower for elegant feel
 
-        // --- 2. THE TRACKABLE CONVERSION LINK EXECUTION ---
+        // --- 2. TRACKING FOR CALL BUTTON ---
+        document.getElementById('call-button').addEventListener('click', function() {
+            fbq('track', 'Contact'); // Optional tracking info for regular calls
+        });
+
+        // --- 3. THE TRACKABLE CONVERSION LINK EXECUTION FOR WHATSAPP ---
         document.getElementById('cta-button').addEventListener('click', function() {
-            // Send standard contact conversion signal to Meta Event stream
             fbq('track', 'Contact'); 
 
-            // Clean, encoded target strings matching your text specs
-            const phone = "255653678185";
+            const phone = "255653678185"; // (Assuming you want to keep the original WhatsApp number here, you can change it if needed)
             const message = "Habari, naweza kupata habari zaidi kuhusu huduma zenu? Mnapatikana wapi?";
             const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 
-            // Force a slight delay buffer (300ms) to guarantee packet transfer to Meta before navigating away
             setTimeout(function() {
                 window.location.href = whatsappUrl;
             }, 300);
